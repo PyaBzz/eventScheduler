@@ -1,0 +1,38 @@
+Intro:
+
+The assignment is open-ended on purpose, as we are interested in seeing how you navigate the trade-offs involved.
+There is no specific “correct” solution that we expect.
+We expect to get an insight into where/how you may fit into our team by examining the work you submit.
+
+Assignment:
+
+The app should have a list of upcoming and past events and a form for creating a new event.
+When a user selects an event on the list, details of the event should appear somewhere.
+Create a simple RESTful API server to provide the event data to the app
+
+Expectations:
+tools, framework(s), libraries, data storage, etc. is up to you based on what you consider helpful/useful
+Include a readme file explaining:
+your decisions about why you chose the technology you did
+any trade-offs you made or shortcuts you took because of limited time available for the assignment
+(you’d normally do something differently but had to focus on other things you deemed more important)
+We should be able to run and test your solution locally
+Typescript is preferred but not required
+ 
+Reasons for Node + Express:
+- Little boilerplate required to make a simple demo
+- The assignment suggests TypeScript
+
+
+
+Environment Setup:
+If you're on an Arch Linux machine you're in luck. Just run setup.sh to take these steps.
+Make sure you have node version 16.13.2 + npm version 8.5.4
+Run npm install
+
+How to run:
+npm start
+
+Further steps:
+- EsLint
+- Configuration file for other environments
