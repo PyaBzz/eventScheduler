@@ -1,5 +1,7 @@
 import { Entry } from "../types/Entry";
 
 export interface EntryServiceConcept {
-    get(): Array<Entry>;
+    getAll(): Array<Entry>;
+    get(id: number): Entry;
+    save(name: string, start: Date, end: Date, id?: number): number;
 }

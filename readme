@@ -23,6 +23,14 @@ Reasons for Node + Express:
 - Little boilerplate required to make a simple demo
 - The assignment suggests TypeScript
 
+Reasons for Mocha + Chai
+- Prior familiarity with the packages
+
+Why dependency injection:
+- Untangling of code for better testability
+
+Why mocked repository:
+- Limited time so skipped the persistence layer
 
 
 Environment Setup:
@@ -39,3 +47,4 @@ Further steps:
 - Add controllers if more functionality needed
 - Add middleware for authentication
 - Add middleware for logging
+- 

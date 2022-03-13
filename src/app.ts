@@ -7,9 +7,9 @@ import { EntryServiceConcept } from "./services/entryServiceConcept";
 
 const app = express();
 app.get('/', (req: Request, res: Response) => {
+    // todo: Resolve directly since there's no controller constructor involved
     const entryService: EntryServiceConcept = Container.resolve(The.EntryService);
-    console.log(entryService.get());
-    res.send('Hi');
+    res.send(entryService.getAll());
 });
 
 const config = Config.get();

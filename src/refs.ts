@@ -6,4 +6,5 @@ export class Environment { // String safety for environment names
 
 export class The { // String safety for globally unique tokens
     public static EntryService = 'EntryService';
+    public static EntryRepo = 'EntryRepo';
 }
