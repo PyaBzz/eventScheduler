@@ -34,4 +34,25 @@ describe(The.EntryService, () => {
             assert.throws(() => instance.get(dummyId), `Found no Entry with the id of ${dummyId}`);
         });
     });
+
+    describe('save', () => {
+        it('assigns id to new Entry', () => {
+            const entry = new Entry('Event', new Date());
+            instance.save(entry);
+            assert.isNumber(entry.id);
+        });
+
+        it('returns the new Entry', () => {
+            const entry = new Entry('Event', new Date());
+            const res = instance.save(entry);
+            assert.strictEqual(res, entry);
+        });
+
+        it('saves', () => {
+            const entry = new Entry('Event', new Date());
+            instance.save(entry);
+            const retrieved = instance.get(entry.id);
+            assert.isTrue(retrieved instanceof Entry);
+        });
+    });
 });

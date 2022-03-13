@@ -24,8 +24,8 @@ export class EntryService implements EntryServiceConcept {
         throw new Error(`Data inconsistency. Found ${res.length} Entries with the id of ${id}`)
     }
 
-    save(name: string, start: Date, end: Date, id?: number): number {
+    save(entry: Entry): Entry {
         // todo: add validation here for id > 0
-        throw new Error("Method not implemented.");
+        return this.repo.save(entry);
     }
 }
