@@ -36,3 +36,6 @@ npm start
 Further steps:
 - EsLint
 - Configuration file for other environments
+- Add controllers if more functionality needed
+- Add middleware for authentication
+- Add middleware for logging

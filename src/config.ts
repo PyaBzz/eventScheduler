@@ -1,5 +1,5 @@
 import * as devConfig from '../config/development.json'
-import { Environment } from './types/refs';
+import { Environment } from './refs';
 
 export class Config {
     static get() {

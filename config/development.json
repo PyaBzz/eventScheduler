@@ -1,4 +1,4 @@
 {
     "port": 3000,
-    "launchMessage": "Now you can use Curl or Postman to hit your app"
+    "launchMessage": "Now use Curl or Postman to hit your app"
 }
