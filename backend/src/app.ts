@@ -14,5 +14,5 @@ app.get('/', (req: Request, res: Response) => {
 
 const config = Config.get();
 app.listen(config.port, () => {
-    console.log(`${config.launchMessage} at localhost::${config.port}`);
+    console.log(`${config.launchMessage} at localhost:${config.port}`);
 });

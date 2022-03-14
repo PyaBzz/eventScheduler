@@ -1,5 +1,5 @@
 {
-  "name": "scheduler",
+  "name": "backend",
   "version": "1.0.0",
   "description": "A simple node.js project to play with",
   "main": "app.js",
