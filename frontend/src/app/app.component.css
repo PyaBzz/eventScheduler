@@ -41,7 +41,15 @@
     border: 1px solid purple;
     margin: 20px 4px;
     padding: 0 16px;
-    width: 50%;
+    width: 40%;
+    height: 600px;
+  }
+
+  #form-container {
+    border: 1px solid green;
+    margin: 20px 4px;
+    padding: 0 16px;
+    width: 40%;
     height: 600px;
   }
 
