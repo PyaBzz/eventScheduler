@@ -10,7 +10,7 @@ import { EntryServiceConcept } from './entry.service.concept';
 export class EntryService implements EntryServiceConcept {
 
   constructor(
-    @Inject(The.ApiService) public api: ApiServiceConcept
+    @Inject(The.ApiService) private api: ApiServiceConcept
   ) { }
 
   getAll(): Promise<Entry[]> {
