@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -23,6 +24,7 @@ import { EntryService } from './services/entry.service';
     FormComponent
   ],
   providers: [
+    DatePipe,
     { provide: The.ApiService, useClass: ApiService },
     { provide: The.EntryService, useClass: EntryService }
   ],

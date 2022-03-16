@@ -1,6 +1,7 @@
-<p>list works!</p>
+<h2>Calendar Entries</h2>
+
 <ul>
     <li *ngFor="let entry of entries | async">
-        Calendar Entry: {{entry.title}}
+        <a href="#">{{format(entry.start)}} > {{entry.title}}</a>
     </li>
 </ul>

@@ -26,3 +26,6 @@ Why EntryService:
 - Concerned with persistence and retrieval of calendar entries to be reused in UI components
 - Hides lower level concerns like api calls away from higher layers
 
+Further steps:
+
+- Responsive design
