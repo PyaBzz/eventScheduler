@@ -15,7 +15,7 @@ export class ApiService implements ApiServiceConcept {
   get() {
     return new Promise<any>(
       (resolveCallback, rejectCallback) => {
-        const subscription = this.client.get<Entry[]>('http://localhost:3000')
+        const subscription = this.client.get<Entry[]>('http://localhost:3000') //todo: Should be type agnostic 'any'
           .subscribe({
             next: result => resolveCallback(result),
             error: er => { throw new Error(er) },
