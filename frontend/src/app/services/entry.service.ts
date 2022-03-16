@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { The } from '../refs';
 import { Entry } from '../types/entry';
+import { ApiServiceConcept } from './api.service.concept';
 import { EntryServiceConcept } from './entry.service.concept';
 
 @Injectable({
@@ -7,10 +9,12 @@ import { EntryServiceConcept } from './entry.service.concept';
 })
 export class EntryService implements EntryServiceConcept {
 
-  constructor() { }
+  constructor(
+    @Inject(The.ApiService) public api: ApiServiceConcept
+  ) { }
 
   getAll(): Promise<Entry[]> {
-    throw new Error('Method not implemented.');
+    return this.api.get();
   }
 
   get(id: number): Promise<Entry> {
