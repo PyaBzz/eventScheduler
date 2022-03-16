@@ -34,6 +34,8 @@ Why mocked repository:
 - If we were to have a real persistence layer we'd have to use a library like Sinon
 to mock the repository in unit tests for the entryService.
 
+Why CORS:
+- To allow requests from the frontend app running in browser on localhost
 
 Environment Setup:
 If you're on an Arch Linux machine you're in luck. Just run setup.sh to take these steps. There's room for better automation.
