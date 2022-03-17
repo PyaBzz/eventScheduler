@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit, Output, EventEmitter } from '@angular/core';
 import { The } from 'src/app/the.refs';
 import { EntryServiceConcept } from 'src/app/services/entry.service.concept';
 import { Entry } from 'src/app/types/entry';
@@ -11,6 +11,8 @@ import { Entry } from 'src/app/types/entry';
 })
 export class ListComponent implements OnInit {
   public entries: Promise<Entry[]>;
+
+  @Output() public showFormEvent = new EventEmitter<number | undefined>();
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
@@ -25,5 +27,10 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onClick(entryId: number | undefined) {
+    alert('List says ' + entryId);
+    this.showFormEvent.emit(entryId);
   }
 }

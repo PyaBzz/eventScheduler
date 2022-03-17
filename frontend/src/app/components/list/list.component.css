@@ -11,3 +11,7 @@ li {
 li.a {
   width: 100%;
 }
+
+button {
+  cursor: pointer;
+}

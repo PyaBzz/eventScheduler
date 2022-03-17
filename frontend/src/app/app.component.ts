@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { FormComponent } from './components/form/form.component';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(FormComponent) form!: FormComponent;
+
+  onShowForm(entryId: number | undefined) {
+    alert('Parent says ' + entryId);
+    this.form.show(entryId);
+  }
 }

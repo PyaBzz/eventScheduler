@@ -1,7 +1,9 @@
 <h2>Calendar Entries</h2>
 
+<button (click)="onClick(undefined)">Add</button>
+
 <ul>
     <li *ngFor="let entry of entries | async">
-        <a href="#">{{format(entry.start)}} > {{entry.title}}</a>
+        <button (click)="onClick(entry.id)">{{format(entry.start)}} > {{entry.title}}</button>
     </li>
 </ul>

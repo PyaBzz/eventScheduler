@@ -12,4 +12,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  show(entryId: number | undefined) {
+    alert('Form says ' + entryId);
+  }
 }

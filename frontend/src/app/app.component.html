@@ -17,7 +17,7 @@
 <table>
   <tr>
     <td id="list-container">
-      <app-list></app-list>
+      <app-list (showFormEvent)="onShowForm($event)"></app-list>
     </td>
     <td id="form-container">
       <app-form></app-form>
