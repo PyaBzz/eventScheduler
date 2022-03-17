@@ -2,7 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { ApiServiceConcept } from './api.service.concept';
 import { ApiService } from './api.service';
 import { TestBed } from '@angular/core/testing';
-import { The } from '../refs';
+import { The } from '../the.refs';
 
 describe('ApiService', () => {
   let service: ApiServiceConcept;

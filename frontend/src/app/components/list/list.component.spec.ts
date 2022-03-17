@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { The } from 'src/app/refs';
+import { The } from 'src/app/the.refs';
 import { ApiService } from 'src/app/services/api.service';
 import { EntryService } from 'src/app/services/entry.service';
 

@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
 import { ApiService } from './services/api.service';
-import { The } from './refs';
+import { The } from './the.refs';
 import { EntryService } from './services/entry.service';
 
 @NgModule({

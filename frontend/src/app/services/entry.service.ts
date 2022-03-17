@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { The } from '../refs';
+import { The } from '../the.refs';
 import { Entry } from '../types/entry';
 import { ApiServiceConcept } from './api.service.concept';
 import { EntryServiceConcept } from './entry.service.concept';

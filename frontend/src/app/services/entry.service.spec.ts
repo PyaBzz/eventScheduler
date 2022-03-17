@@ -3,7 +3,7 @@ import { EntryServiceConcept } from './entry.service.concept';
 import { EntryService } from './entry.service';
 import { ApiService } from './api.service';
 import { TestBed } from '@angular/core/testing';
-import { The } from '../refs';
+import { The } from '../the.refs';
 
 
 describe('EntryService', () => {

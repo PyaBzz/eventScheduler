@@ -1,6 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
-import { The } from 'src/app/refs';
+import { The } from 'src/app/the.refs';
 import { EntryServiceConcept } from 'src/app/services/entry.service.concept';
 import { Entry } from 'src/app/types/entry';
 
