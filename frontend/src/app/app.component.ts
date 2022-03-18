@@ -6,11 +6,12 @@ import { FormComponent } from './components/form/form.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
   @ViewChild(FormComponent) form!: FormComponent;
 
   onShowForm(entryId: number | undefined) {
-    alert('Parent says ' + entryId);
     this.form.show(entryId);
   }
 }

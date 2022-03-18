@@ -1,18 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
 
+export class FormComponent {
+  public isShown: boolean = false;
+  public id: number | undefined;
   constructor() { }
 
-  ngOnInit(): void {
+  public show(entryId: number | undefined) {
+    this.id = entryId;
+    this.isShown = true;
   }
 
-  show(entryId: number | undefined) {
-    alert('Form says ' + entryId);
+  public hide() {
+    this.isShown = false;
+  }
+
+  public save() {
+    this.hide();
+  }
+
+  public cancel() {
+    this.hide();
   }
 }

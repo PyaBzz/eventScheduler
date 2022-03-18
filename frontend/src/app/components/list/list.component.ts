@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, Inject, LOCALE_ID, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Inject, LOCALE_ID, Output, EventEmitter } from '@angular/core';
 import { The } from 'src/app/the.refs';
 import { EntryServiceConcept } from 'src/app/services/entry.service.concept';
 import { Entry } from 'src/app/types/entry';
@@ -9,7 +9,8 @@ import { Entry } from 'src/app/types/entry';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+
+export class ListComponent {
   public entries: Promise<Entry[]>;
 
   @Output() public showFormEvent = new EventEmitter<number | undefined>();
@@ -26,11 +27,8 @@ export class ListComponent implements OnInit {
     return formatDate(date, 'yyyy/MM/dd @ HH:mm:ss', this.locale);
   }
 
-  ngOnInit(): void {
-  }
-
   onClick(entryId: number | undefined) {
-    alert('List says ' + entryId);
+    // alert('List says ' + entryId);
     this.showFormEvent.emit(entryId);
   }
 }
