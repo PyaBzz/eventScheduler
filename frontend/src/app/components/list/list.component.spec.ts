@@ -1,8 +1,8 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { The } from 'src/app/the.refs';
-import { ApiService } from 'src/app/services/api.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EntryService } from 'src/app/services/entry.service';
+import { ApiService } from 'src/app/services/api.service';
+import { The } from 'src/app/the.refs';
 
 import { ListComponent } from './list.component';
 
@@ -15,7 +15,7 @@ describe('ListComponent', () => {
       declarations: [ListComponent],
       imports: [HttpClientTestingModule],
       providers: [
-        { provide: The.EntryService, useClass: EntryService },
+        { provide: The.EntryService, useClass: EntryService }, //todo: mock instead
         { provide: The.ApiService, useClass: ApiService }
       ]
     })
