@@ -51,4 +51,5 @@ Further steps:
 - Add controllers if more functionality needed
 - Add middleware for authentication
 - Add middleware for logging
-- 
+- A proper repository with parameterised query builder to block injection attacks
+- Link to database
