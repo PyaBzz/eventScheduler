@@ -29,3 +29,5 @@ Why EntryService:
 Further steps:
 
 - Responsive design
+- A watch service to throw an error if backend becomes unavailable
+- More unit tests with mocked dependencies
