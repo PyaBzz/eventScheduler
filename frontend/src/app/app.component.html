@@ -17,10 +17,10 @@
 <table>
   <tr>
     <td id="list-container">
-      <app-list (showFormEvent)="onShowForm($event)"></app-list>
+      <app-list (itemClickedEvent)="onShowForm($event)"></app-list>
     </td>
     <td id="form-container">
-      <app-form></app-form>
+      <app-form (onSavedEvent)="onFormSaved()"></app-form>
     </td>
   </tr>
 </table>

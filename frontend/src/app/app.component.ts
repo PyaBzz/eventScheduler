@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormComponent } from './components/form/form.component';
+import { ListComponent } from './components/list/list.component';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,13 @@ import { FormComponent } from './components/form/form.component';
 export class AppComponent {
 
   @ViewChild(FormComponent) form!: FormComponent;
+  @ViewChild(ListComponent) list!: ListComponent;
 
   onShowForm(entryId: number | undefined) {
     this.form.show(entryId);
+  }
+
+  onFormSaved() {
+    this.list.refresh();
   }
 }

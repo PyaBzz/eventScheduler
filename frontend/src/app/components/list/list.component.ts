@@ -11,24 +11,26 @@ import { Entry } from 'src/app/types/entry';
 })
 
 export class ListComponent {
-  public entries: Promise<Entry[]>;
+  public entries!: Promise<Entry[]>;
 
-  @Output() public showFormEvent = new EventEmitter<number | undefined>();
+  @Output() public itemClickedEvent = new EventEmitter<number | undefined>();
 
   constructor(
     @Inject(LOCALE_ID) private locale: string,
     @Inject(The.EntryService) private entryService: EntryServiceConcept
   ) {
-    //todo: Throw error if service fails to hit backend or get result
-    this.entries = this.entryService.getAll();
+    this.refresh();
   }
 
   public format(date: Date): string {
     return formatDate(date, 'yyyy/MM/dd @ HH:mm:ss', this.locale);
   }
 
-  onClick(entryId: number | undefined) {
-    // alert('List says ' + entryId);
-    this.showFormEvent.emit(entryId);
+  public onClick(entryId: number | undefined) {
+    this.itemClickedEvent.emit(entryId);
+  }
+
+  public refresh() {
+    this.entries = this.entryService.getAll(); //todo: handle error scenario
   }
 }

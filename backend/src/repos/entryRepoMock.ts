@@ -7,11 +7,7 @@ export class EntryRepoMock implements EntryRepoConcept {
     private readonly data: Entry[] = [];
 
     constructor() {
-        for (let i = 1; i <= 4; i++) {
-            this.data.push(
-                new Entry('Event' + i, new Date(), null, 'Note' + i, i)
-            );
-        }
+        this.populate();
     }
 
     get(id?: number): Entry[] {
@@ -32,5 +28,17 @@ export class EntryRepoMock implements EntryRepoConcept {
         entry.id = maxId + 1;
         this.data.push(entry);
         return entry;
+    }
+
+    private populate() {
+        let id = 1;
+        for (let i = -2; i <= 2; i++) {
+            const start = new Date();
+            start.setHours(start.getHours() + i);
+            this.data.push(
+                new Entry('Event' + id, start, null, 'Note' + id, id)
+            );
+            id++;
+        }
     }
 }

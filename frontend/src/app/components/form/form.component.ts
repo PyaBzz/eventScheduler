@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { EntryServiceConcept } from 'src/app/services/entry.service.concept';
 import { The } from 'src/app/the.refs';
 import { Entry } from 'src/app/types/entry';
@@ -11,7 +11,10 @@ import { Entry } from 'src/app/types/entry';
 
 export class FormComponent {
   public isShown: boolean = false;
-  public entry: Entry | undefined;
+  public entry!: Entry;
+
+  @Output() public onSavedEvent = new EventEmitter();
+
   constructor(
     @Inject(The.EntryService) private entryService: EntryServiceConcept
   ) { }
@@ -24,10 +27,10 @@ export class FormComponent {
             this.entry = result;
             this.isShown = true;
           },
-          err => { } // todo: What should happen here?
+          err => { } // todo: Handle error scenario
         )
     } else {
-      this.entry = new Entry('New Entry', new Date());
+      this.entry = new Entry('Placeholder', new Date());
       this.isShown = true;
     }
   }
@@ -37,9 +40,15 @@ export class FormComponent {
   }
 
   public save() {
-    this.entryService.save(new Entry('Event', new Date()));
-    //todo: verfiy success before hiding
-    this.hide();
+    //todo: validate input
+    if (this.entry)
+      this.entryService.save(this.entry).then(
+        result => {
+          this.onSavedEvent.emit();
+          this.hide();
+        },
+        err => { } // todo: Handle error scenario
+      );
   }
 
   public cancel() {

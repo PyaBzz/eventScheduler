@@ -28,8 +28,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.post('/', (req: Request, res: Response) => {
     const entry = entryService.save(req.body)
-    console.log(entry);
-    res.send('Dasoo');
+    res.send(entry);
 });
 
 const config = Config.get();
