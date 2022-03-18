@@ -23,7 +23,15 @@ export class ApiService implements ApiServiceConcept {
       });
   }
 
-  post(): Promise<any> {
-    throw new Error('Method not implemented.');
+  post(payload: any): Promise<any> {
+    return new Promise<any>(
+      (resolveCallback, rejectCallback) => {
+        const subscription = this.client.post<any>('http://localhost:3000', payload) //todo: get from config
+          .subscribe({
+            next: result => resolveCallback(result),
+            error: er => { throw new Error(er) },
+            complete: () => { subscription.unsubscribe() }
+          });
+      });
   }
 }

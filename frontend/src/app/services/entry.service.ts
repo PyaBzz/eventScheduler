@@ -21,7 +21,7 @@ export class EntryService implements EntryServiceConcept {
     throw new Error('Method not implemented.');
   }
 
-  save(entry: Entry): Entry {
-    throw new Error('Method not implemented.');
+  save(entry: Entry): Promise<Entry> {
+    return this.api.post(entry);
   }
 }

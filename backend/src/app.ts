@@ -3,6 +3,7 @@ import { The } from './refs';
 import { Config } from './config';
 import { Container } from './diContainer'
 import express, { Request, Response } from 'express';
+import bodyParser from "body-parser";
 import { EntryServiceConcept } from "./services/entryServiceConcept";
 import cors from 'cors';
 
@@ -12,11 +13,18 @@ const corsOptions = {
 }
 const app = express();
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
+// todo: Resolve directly since there's no controller constructor involved
+const entryService: EntryServiceConcept = Container.resolve(The.EntryService);
 
 app.get('/', (req: Request, res: Response) => {
-    // todo: Resolve directly since there's no controller constructor involved
-    const entryService: EntryServiceConcept = Container.resolve(The.EntryService);
     res.send(entryService.getAll());
+});
+
+app.post('/', (req: Request, res: Response) => {
+    const entry = entryService.save(req.body)
+    console.log(entry);
+    res.send('Dasoo');
 });
 
 const config = Config.get();
