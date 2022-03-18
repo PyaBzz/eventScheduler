@@ -18,7 +18,12 @@ app.use(bodyParser.json());
 const entryService: EntryServiceConcept = Container.resolve(The.EntryService);
 
 app.get('/', (req: Request, res: Response) => {
-    res.send(entryService.getAll());
+    const id = Number.parseInt(req.query.id as string);
+    if (id) {
+        res.send(entryService.get(id));
+    } else {
+        res.send(entryService.getAll());
+    }
 });
 
 app.post('/', (req: Request, res: Response) => {

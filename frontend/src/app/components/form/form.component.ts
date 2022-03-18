@@ -11,14 +11,25 @@ import { Entry } from 'src/app/types/entry';
 
 export class FormComponent {
   public isShown: boolean = false;
-  public id: number | undefined;
+  public entry: Entry | undefined;
   constructor(
     @Inject(The.EntryService) private entryService: EntryServiceConcept
   ) { }
 
   public show(entryId: number | undefined) {
-    this.id = entryId;
-    this.isShown = true;
+    if (entryId) {
+      this.entryService.get(entryId)
+        .then(
+          result => {
+            this.entry = result;
+            this.isShown = true;
+          },
+          err => { } // todo: What should happen here?
+        )
+    } else {
+      this.entry = new Entry('New Entry', new Date());
+      this.isShown = true;
+    }
   }
 
   public hide() {

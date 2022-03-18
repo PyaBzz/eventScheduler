@@ -1,6 +1,13 @@
 <ng-template [ngIf]="isShown">
     <h2>Entry Details</h2>
-    <h3>{{id}}</h3>
+    <label>Title</label><input type="text" [ngModel]="entry!.title">
+    <br>
+    <label>Start</label><input type="datetime-local" [ngModel]="entry!.start | date:'yyyy-MM-ddTHH:mm'">
+    <br>
+    <label>End</label><input type="datetime-local" [ngModel]="entry!.end | date:'yyyy-MM-ddTHH:mm'">
+    <br>
+    <label>Note</label><input type="text" [ngModel]="entry!.note">
+    <br>
 
     <button (click)="cancel()">Cancel</button>
     <button (click)="save()">Save</button>

@@ -1,4 +1,4 @@
 export interface ApiServiceConcept {
-    get(): Promise<any>;
+    get(id?: number): Promise<any>;
     post(payload: any): Promise<any>;
 }

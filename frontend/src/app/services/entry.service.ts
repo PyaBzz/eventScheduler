@@ -18,7 +18,7 @@ export class EntryService implements EntryServiceConcept {
   }
 
   get(id: number): Promise<Entry> {
-    throw new Error('Method not implemented.');
+    return this.api.get(id);
   }
 
   save(entry: Entry): Promise<Entry> {
