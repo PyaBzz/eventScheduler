@@ -25,7 +25,7 @@ export class EntryService implements EntryServiceConcept {
     }
 
     save(entry: Entry): Entry {
-        // todo: add validation here for id > 0 and other props
+        // todo: add validation here
         return this.repo.save(entry);
     }
 }
