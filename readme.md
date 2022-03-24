@@ -21,6 +21,13 @@ Otherwise take these steps.
 At this time your default browser should pop a new tab and browse the frontend app at localhost:4200.
 If not, please manually browse that address.
 
+## Frontend unit tests  
+In the frontend directory run: ng test
+
+## Backend unit tests  
+In the backend directory run: npm test
+
+
 # Frontend Structure
 
 For the frontend I chose Angular because:
