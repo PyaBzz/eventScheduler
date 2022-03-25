@@ -86,7 +86,7 @@ To achieve loose coupling of code. Injection by interface doesn't work in TypeSc
 
 # Backend Structure
 For the backend I chose Node + Express because:
-- The project definition suggests TypeScript which implicitly narrows down to the JS echo system.
+- The project definition suggests TypeScript which implicitly narrows down to the JS ecosystem.
 - Little boilerplate required to spin up a simple demo
 - My prior familiarity with Mocha and Chai
 
