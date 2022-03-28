@@ -90,7 +90,7 @@ For the backend I chose Node + Express because:
 - Little boilerplate required to spin up a simple demo
 - My prior familiarity with Mocha and Chai
 
-**Why CORS**
+**Why CORS**  
 To serve requests from the frontend app running in browser on localhost.
 
 **Why dependency injection**  
